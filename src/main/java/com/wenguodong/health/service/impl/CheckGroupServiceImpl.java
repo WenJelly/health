@@ -10,6 +10,7 @@ import com.wenguodong.health.pojo.CheckGroup;
 import com.wenguodong.health.service.CheckGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -102,6 +103,7 @@ public class CheckGroupServiceImpl implements CheckGroupService {
      * @param id 要删除的检查项id
      * @return 统一响应结果
      */
+    @Transactional
     @Override
     public boolean delete(Integer id) {
         //1. 调用Dao层删除检查组和检查项的关联表
@@ -112,6 +114,18 @@ public class CheckGroupServiceImpl implements CheckGroupService {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 查询所有检查组
+     * @return 所有检查组数据
+     */
+    @Override
+    public List<CheckGroup> findAll() {
+
+        List<CheckGroup> checkGroups = checkGroupDao.findAll();
+
+        return checkGroups;
     }
 
     private void setCheckGroupAndCheckItem(Integer checkGroupId, Integer[] checkItemIds) {

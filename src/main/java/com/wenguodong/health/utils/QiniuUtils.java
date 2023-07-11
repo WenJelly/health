@@ -14,9 +14,9 @@ import com.qiniu.util.Auth;
  * 七牛云工具类
  */
 public class QiniuUtils {
-    public static String accessKey = "lcVFkWvwP1WUOVT9ihgfSmHrJN6HG3EF-Ulw5QnS";
-    public static String secretKey = "h-BaqSdtih0YAo_e8d0XJHgB-PBYzPNLOO85Fy8z";
-    public static String bucket = "guang-zhou-heima-health";
+    public static String accessKey = "AAErCEMJaX1xwDtqlryC4AlFC_KwNHfYU22HKyrm";
+    public static String secretKey = "izZLiQ_zwSg21b7v5-G8apdg2J0pJ_zJ3BStFvf2";
+    public static String bucket = "wenjelly1445607419";
 
     public static void upload2Qiniu(String filePath, String fileName) {
         // 构造一个带指定Zone对象的配置类

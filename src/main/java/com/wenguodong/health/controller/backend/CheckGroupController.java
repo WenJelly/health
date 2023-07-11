@@ -5,8 +5,8 @@ import com.wenguodong.health.entity.PageResult;
 import com.wenguodong.health.entity.QueryPageBean;
 import com.wenguodong.health.entity.Result;
 import com.wenguodong.health.pojo.CheckGroup;
+import com.wenguodong.health.pojo.Setmeal;
 import com.wenguodong.health.service.CheckGroupService;
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -105,8 +105,22 @@ public class CheckGroupController {
     public Result delete(Integer id) {
         //1. 调用Service层，根据检查组Id删除检查组
         boolean delete = checkGroupService.delete(id);
-        String message = delete ? MessageConstant.DELETE_CHECKITEM_SUCCESS : MessageConstant.DELETE_CHECKITEM_FAIL;
+        String message = delete ? MessageConstant.DELETE_CHECKGROUP_SUCCESS : MessageConstant.DELETE_CHECKGROUP_FAIL;
         return new Result(delete, message);
     }
+
+    /**
+     * 查询所有的检查组
+     *
+     * @return
+     */
+    @RequestMapping("/findAll.do")
+    public Result findAll() {
+        //1.查询所有检查组
+        List<CheckGroup> checkGroups = checkGroupService.findAll();
+
+        return new Result(true, MessageConstant.QUERY_CHECKGROUP_SUCCESS, checkGroups);
+    }
+
 
 }

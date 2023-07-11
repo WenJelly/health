@@ -11,6 +11,7 @@ import com.wenguodong.health.pojo.CheckItem;
 import com.wenguodong.health.service.CheckItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -72,6 +73,7 @@ public class CheckItemServiceImpl implements CheckItemService {
      * @param id 要删除的检查项id
      * @return 统一响应结果
      */
+    @Transactional
     @Override
     public boolean delete(Integer id) {
         // 1.查询当前检查项是否和检查组关联

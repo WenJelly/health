@@ -51,4 +51,7 @@ public interface CheckGroupDao {
 
     @Delete("delete from t_checkgroup where id = #{id}")
     long delete(Integer id);
+
+    @Select("select * from t_checkgroup")
+    List<CheckGroup> findAll();
 }
