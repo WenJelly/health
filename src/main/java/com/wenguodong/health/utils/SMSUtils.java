@@ -17,9 +17,9 @@ public class SMSUtils {
 
     // 理解为阿里云的账号密码
     // 您的AccessKey ID
-    private static String accessKeyId = "LTAI5tGfnQkJ9m2mHwCMZ26z";
+    private static String accessKeyId = "";
     // 您的AccessKey Secret
-    private static String accessKeySecret = "qvb5ZPcrCmdZwO5dgf5z7Q8ObQlIEI";
+    private static String accessKeySecret = "";
 
     /**
      * 使用AK&SK初始化账号Client
